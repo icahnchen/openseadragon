@@ -3410,6 +3410,9 @@ function drawWorld( viewer ) {
 // Navigation Controls
 ///////////////////////////////////////////////////////////////////////////////
 function resolveUrl( prefix, url ) {
+    if(prefix.toString().toLowerCase() === 'base64'){
+        return require('./images/' + url);
+    }
     return prefix ? prefix + url : url;
 }
 
